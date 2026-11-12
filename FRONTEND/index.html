@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda y Gestión de Componentes Eléctricos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="main-layout">
+    <div class="card">
+        <h1>⚡ Inventario de Componentes Eléctricos</h1>
+        <h2 id="formTitulo">Añadir Nuevo Componente</h2>
+        <form id="componenteForm">
+            <input type="hidden" id="componenteId">
+            <input type="text" id="nombre" placeholder="Nombre (ej: Contactor)" required>
+            <input type="text" id="categoria" placeholder="Categoría (ej: Maniobra)" required>
+            <input type="number" id="precio" step="0.01" placeholder="Precio ($)" required>
+            <input type="number" id="stock" placeholder="Stock Inicial" required>
+            <textarea id="descripcion" placeholder="Descripción del componente eléctrico..."></textarea>
+            <div class="form-buttons">
+                <button type="submit" id="btnGuardar" class="btn-save">Guardar Componente</button>
+                <button type="button" id="btnCancelar" class="btn-cancel" onclick="cancelarEdicion()">Cancelar Edición</button>
+            </div>
+        </form>
+
+        <h2>Catálogo Disponible</h2>
+        <input type="text" id="buscador" class="search-box" placeholder="🔍 Buscar por nombre o categoría..." oninput="filtrarTabla()">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaCuerpo"></tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>🛒 Carrito de Compras</h2>
+        <div id="carritoLista"><p class="texto-gris">El carrito está vacío.</p></div>
+        <div id="carritoTotal" class="cart-total">Total: $0.00</div>
+        <button id="btnFinalizar" class="btn-checkout" onclick="finalizarCompra()" disabled>
+            Confirmar Compra y Descontar Stock
+        </button>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
