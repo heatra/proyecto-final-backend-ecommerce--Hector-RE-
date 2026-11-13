@@ -46,7 +46,7 @@ proyecto-final-backend-ecommerce--Hector-RE-/
 
 ---
 
-## 🔌 Endpoints de la API REST
+## Endpoints de la API REST
 
 La API corre por defecto en `http://localhost:8080` bajo la ruta base `/api/componentes` y tiene habilitado `@CrossOrigin(origins = "*")` para permitir peticiones desde cualquier cliente frontend.
 
@@ -71,43 +71,45 @@ La API corre por defecto en `http://localhost:8080` bajo la ruta base `/api/comp
 
 ---
 
-## 🚀 Guía de Instalación y Uso
+## Guía de Instalación y Uso
+
+Para que funcione, el usuario que descargue del repositorio debe seguir este orden:
+• 1. Base de Datos (XAMPP / MySQL): Primero encender MySQL, asegurar base de datos tienda_electricidad exista
+• 2. Backend (Spring Boot / Java): Segundo se ejecuta la aplicación Java (./mvnw spring-boot:run). Al arrancar,     
+     conecta a MySQL y abre el puerto 8080 para escuchar peticiones en http://localhost:8080/api/componentes.
+• 3. Frontend (index.html): Tercero y último se abre index.html (con Live Server o en el navegador). Al cargarse,  
+     su archivo JavaScript hace peticiones fetch al puerto 8080 para traer los componentes y dibujarlos en pantalla.
+
+
+## Detalle de Instalación:
 
 ### 1. Clonar el repositorio
 ```bash
 git clone https://github.com.git
 cd proyecto-final-backend-ecommerce--Hector-RE-
 ```
-
----
-
 ### 2. Importar la Base de Datos (XAMPP / MySQL)
 1. Inicia los módulos **Apache** y **MySQL** en el panel de control de **XAMPP**.
 2. Abre `http://localhost/phpmyadmin` en tu navegador.
-3. Crea una nueva base de datos llamada **`tienda_electricidad`**.
+3. Crear una nueva base de datos llamada **`tienda_electricidad`**.
 4. Selecciona la base de datos, ve a la pestaña **Importar**, elige el archivo `.sql` ubicado dentro de la carpeta `DATABASE/` y haz clic en **Importar**.
 
----
-
 ### 3. Configurar y ejecutar el Backend
-1. Abre la carpeta `BACKEND/componentes` en **Visual Studio Code**.
-2. Verifica las credenciales de conexión en `src/main/resources/application.properties`:
+
+1. Abrir la carpeta `BACKEND/componentes` en **Visual Studio Code**.
+2. Verificar las credenciales de conexión en `src/main/resources/application.properties`:
    ```properties
    spring.datasource.url=jdbc:mysql://localhost:3306/tienda_electricidad
    spring.datasource.username=root
-   spring.datasource.password=
-   ```
-   *(Ajusta el usuario y la contraseña si tu instalación local de MySQL tiene clave configurada).*
-3. Ejecuta el servidor desde la terminal integrada:
+   spring.datasource.password=root
+   
+3. Ejecutar el servidor desde la terminal integrada:
    ```bash
    cd BACKEND/componentes
    ./mvnw spring-boot:run
    ```
-   *(En Windows puedes usar `mvnw.cmd spring-boot:run` o iniciar desde el botón **Run** de VS Code).*
-
----
 
 ### 4. Ejecutar el Frontend
-1. Asegúrate de que el Backend esté activo en `http://localhost:8080`.
-2. Abre la carpeta `FRONTEND` en Visual Studio Code.
-3. Haz clic derecho sobre `index.html` y selecciona **Open with Live Server** (o ábrelo directamente con doble clic en tu navegador web).
+1. Asegúrar que el Backend esté activo en `http://localhost:8080`.
+2. Abrir la carpeta `FRONTEND` en Visual Studio Code.
+3. Hacer clic derecho sobre `index.html` y seleccionar: Open with Live Server (o ábrir directamente con doble clic en el navegador web).
