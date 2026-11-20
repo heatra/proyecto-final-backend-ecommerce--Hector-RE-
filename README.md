@@ -1,5 +1,23 @@
 # ⚡ Proyecto Final E-Commerce - Tienda de Electricidad (API REST + Frontend)
 
+LINK VIDEOS GRABADOS CON EXPLICACION
+
+Son cinco videos explicando distintas partes del programa
+
+1) Tienda:                https://youtu.be/ZQ_HWzpVwEY
+
+2) Uso de XAMPP :         https://youtu.be/6jX_0pfwmSM
+
+3) Tienda:                https://youtu.be/jAFiYRkGNxw
+
+4) Uso de Postaman :      https://youtu.be/MY9lrVqOPY0
+
+5) Tabla de componentes : https://youtu.be/B5QdfzKGyjA
+
+
+
+
+
 Sistema web Full Stack desarrollado como proyecto final para la gestión integral de componentes y artículos de una tienda de electricidad. Cuenta con una **API REST en Java (Spring Boot)** con validaciones y soporte CORS, una interfaz web en **HTML/CSS/JS** y el respaldo de la base de datos relacional en **MySQL**.
 
 * **Repositorio:** [proyecto-final-backend-ecommerce--Hector-RE-](https://github.com)
